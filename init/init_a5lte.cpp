@@ -40,22 +40,19 @@ void init_dsds() {
 
 void vendor_load_properties()
 {
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-
     std::string platform = property_get("ro.board.platform");
-
     if (platform != ANDROID_TARGET)
         return;
 
-    if (strstr(bootloader, "A500FU")) {
+    std::string bootloader = property_get("ro.bootloader");
+
+    if (bootloader.find("A500FU") == 0) {
         /* SM-A500FU */
-        property_set("ro.build.fingerprint", "samsung/a5ultexx/a5ulte:5.0.2/LRX22G/A500FUXXU1BOE6:user/release-keys");
-        property_set("ro.build.description", "a5ultexx-user 5.0.2 LRX22G A500FUXXU1BOE6 release-keys");
+        property_set("ro.build.fingerprint", "samsung/a5ultexx/a5ulte:7.1/NDE63X/A500FUXXU1CPG1:user/release-keys");
+        property_set("ro.build.description", "a5ultexx-user 7.1 NDE63X A500FUXXU1CPG1 release-keys");
         property_set("ro.product.model", "SM-A500FU");
         property_set("ro.product.device", "a5ulte");
-    } else if (strstr(bootloader, "A500F")) {
+    } else if (bootloader.find("A500F") == 0) {
         /* SM-A500F */
         property_set("ro.build.fingerprint", "samsung/a5ltexx/a5lte:5.0.2/LRX22G/A500FXXU1BOH4:user/release-keys");
         property_set("ro.build.description", "a5ltexx-user 5.0.2 LRX22G A500FXXU1BOH4 release-keys");
@@ -63,7 +60,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "a5lte");
 
         init_dsds();
-    } else if (strstr(bootloader, "A500G")) {
+    } else if (bootloader.find("A500G") == 0) {
         /* SM-A500G */
         property_set("ro.build.fingerprint", "samsung/a5ltedd/a5lte:5.0.2/LRX22G/A500GXXU1BOJ2:user/release-keys");
         property_set("ro.build.description", "a5ltedd-user 5.0.2 LRX22G A500GXXU1BOJ2 release-keys");
@@ -71,7 +68,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "a5lte");
 
         init_dsds();
-    } else if (strstr(bootloader, "A500M")) {
+    } else if (bootloader.find("A500M") == 0) {
         /* SM-A500M */
         property_set("ro.build.fingerprint", "samsung/a5lteub/a5lte:5.0.2/LRX22G/A500MUBU1BPB2:user/release-keys");
         property_set("ro.build.description", "a5lteub-user 5.0.2 LRX22G A500MUBU1BPB2 release-keys");
@@ -81,6 +78,6 @@ void vendor_load_properties()
         init_dsds();
     }
 
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
+    std::string device = property_get("ro.product.device");
+    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }
