@@ -1,1 +1,1 @@
-PAC-ROM Device tree for Samsung Galaxy A5
+LineageOS Device tree for Samsung Galaxy A5
