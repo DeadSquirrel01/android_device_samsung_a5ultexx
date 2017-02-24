@@ -1,0 +1,8 @@
+[
+  {
+    "remote": "github",
+    "repository": "DeadSquirrel01/android_device_samsung_a5-common",
+    "target_path": "device/samsung/a5-common",
+    "revision": "omni-7.1"
+  }
+]
