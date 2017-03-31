@@ -76,7 +76,16 @@ void vendor_load_properties()
         property_set("ro.product.device", "a5lte");
 
         init_dsds();
+    } else if (bootloader.find("A500L") == 0) {
+        /* SM-A500M */
+        property_set("ro.build.fingerprint", "samsung/a5ultelgt/a5lte:6.0.1/MMB29M/A500LKLU1CQA1:user/release-keys");
+        property_set("ro.build.description", "a5ultelgt-user 6.0.1 MMB29M A500LKLU1CQA1 release-keys");
+        property_set("ro.product.model", "SM-A500L");
+        property_set("ro.product.device", "a5lte");
+
+        init_dsds();
     }
+
 
     std::string device = property_get("ro.product.device");
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
