@@ -20,8 +20,28 @@ $(call inherit-product-if-exists, vendor/samsung/a5ultexx/a5ultexx-vendor.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-# Device overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/a5-common/overlay
+# dtbTool
+PRODUCT_PACKAGES += \
+    dtbTool.msm8916
 
-# Inherit from a5-common
-$(call inherit-product, device/samsung/a5-common/common.mk)
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc \
+    init.qcom.post_boot.sh \
+    init.carrier.rc \
+    init.class_main.sh \
+    init.qcom.bt.sh \
+    init.qcom.uicc.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.usb.sh \
+    init.qcom.fm.sh \
+    init.qcom.sh \
+    init.recovery.qcom.rc
+
+# Filesystem
+PRODUCT_PACKAGES += \
+    fsck.f2fs \
+    mkfs.f2fs

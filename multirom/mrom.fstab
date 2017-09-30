@@ -1,0 +1,15 @@
+# mount point	fstype	device			[device2]   fstype2
+
+/boot		emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/boot
+/recovery	emmc	/dev/block/platform/soc.0/7824900.sdhci/by-name/recovery
+/system		ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/system
+/cache		ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/cache
+/data		ext4	  /dev/block/platform/soc.0/7824900.sdhci/by-name/userdata	 length=-16384
+/efs		ext4       /dev/block/platform/soc.0/7824900.sdhci/by-name/efs
+/persist	ext4	/dev/block/platform/soc.0/7824900.sdhci/by-name/persist
+/firmware-modem	vfat	/dev/block/platform/soc.0/7824900.sdhci/by-name/modem
+/firmware	vfat	/dev/block/platform/soc.0/7824900.sdhci/by-name/apnhlos
+/misc         emmc          /dev/block/platform/soc.0/7824900.sdhci/by-name/fota
+
+/usb-otg        vfat    /dev/block/sda1         /dev/block/sda
+
