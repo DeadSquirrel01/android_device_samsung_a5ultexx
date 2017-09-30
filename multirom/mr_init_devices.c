@@ -45,7 +45,7 @@ const char *mr_init_devices[] =
     // Input stuff
     "/sys/class/misc/uinput",
     "/sys/devices/soc.0/gpio_keys.80/input*",
-    "/sys/devices/virtual/misc/uinput",
+    "/sys/devices/virtual/input*",
 
     // USB-OTG
     "/sys/devices/platform/msm_hsusb_host*",
