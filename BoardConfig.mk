@@ -177,6 +177,9 @@ MR_FSTAB                    := $(LOCAL_PATH)/multirom/mrom.fstab
 MR_USE_MROM_FSTAB           := true
 MR_NO_KEXEC                 := 4
 MR_CONTINUOUS_FB_UPDATE     := true
+MR_INFOS                    := $(LOCAL_PATH)/mrom_infos
+
+# TWRP
 TW_NO_REBOOT_BOOTLOADER     := true
 TW_HAS_DOWNLOAD_MODE        := true
 TW_THEME                    := portrait_hdpi
