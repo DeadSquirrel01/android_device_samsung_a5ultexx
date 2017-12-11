@@ -1,6 +1,11 @@
-# include PAC common configuration
+# include Omni common configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-include vendor/cm/config/common.mk
+
+# APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Misc packages
+$(call inherit-product, vendor/omni/config/packages.mk)
 
 $(call inherit-product, device/samsung/a5ultexx/omni_a5ultexx.mk)
 
