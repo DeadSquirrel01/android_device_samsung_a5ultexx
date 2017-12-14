@@ -26,9 +26,20 @@ $(call inherit-product, vendor/omni/config/packages.mk)
 # Inherit from a5ultexx device
 $(call inherit-product, device/samsung/a5ultexx/device.mk)
 
+# Also get non-open-source specific aspects if available
+$(call inherit-product-if-exists, vendor/samsung/a5ultexx/a5ultexx-vendor.mk)
+
+# Device overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/a5ultexx/overlay
+
+# Inherit from a5-common
+$(call inherit-product, device/samsung/a5-common/common.mk)
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := omni_a5ultexx
 PRODUCT_DEVICE := a5ultexx
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SM-A500FU
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
