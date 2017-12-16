@@ -15,6 +15,12 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
+# Bootanimation
+TARGET_BOOTANIMATION_SIZE := 840x560
+
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # APNs
@@ -22,9 +28,6 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Misc packages
 $(call inherit-product, vendor/omni/config/packages.mk)
-
-# Inherit from a5ultexx device
-$(call inherit-product, device/samsung/a5ultexx/device.mk)
 
 # Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/a5ultexx/a5ultexx-vendor.mk)
