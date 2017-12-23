@@ -27,10 +27,12 @@
 
 #include <stdlib.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
-#include "util.h"
+
+using android::base::GetProperty;
 
 void init_dsds() {
     property_set("ro.multisim.set_audio_params", "true");
@@ -40,11 +42,11 @@ void init_dsds() {
 
 void vendor_load_properties()
 {
-    std::string platform = property_get("ro.board.platform");
+    std::string platform = GetProperty("ro.board.platform","");
     if (platform != ANDROID_TARGET)
         return;
 
-    std::string bootloader = property_get("ro.bootloader");
+    std::string bootloader = GetProperty("ro.bootloader","");
 
     if (bootloader.find("A500FU") == 0) {
         /* SM-A500FU */
@@ -86,6 +88,6 @@ void vendor_load_properties()
         init_dsds();
     }
 
-    std::string device = property_get("ro.product.device");
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
+    std::string device = GetProperty("ro.product.device","");
+    LOG(ERROR) << "Found bootloader id %s setting build properties for %s device\n" << bootloader.c_str() << device.c_str();
 }

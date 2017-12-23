@@ -1,6 +1,6 @@
-# include PAC common configuration
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-include vendor/cm/config/common.mk
+# include lineage common configuration
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+include vendor/lineage/config/common.mk
 
 $(call inherit-product, device/samsung/a5ultexx/lineage_a5ultexx.mk)
 
