@@ -28,11 +28,13 @@
 #include <stdlib.h>
 
 #include <android-base/properties.h>
+#include <android-base/logging.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 
 using android::base::GetProperty;
+using android::init::property_set;
 
 void init_dsds() {
     property_set("ro.multisim.set_audio_params", "true");
