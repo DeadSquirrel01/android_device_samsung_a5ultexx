@@ -1,1 +1,1 @@
-LineageOS Device tree for Samsung Galaxy A5
+Resurrection Remix Device tree for Samsung Galaxy A5

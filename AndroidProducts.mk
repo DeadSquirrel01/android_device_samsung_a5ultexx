@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_a5ultexx.mk
+    $(LOCAL_DIR)/rr_a5ultexx.mk

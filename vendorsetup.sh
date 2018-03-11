@@ -1,1 +1,1 @@
-add_lunch_combo lineage_a5ultexx-userdebug
+add_lunch_combo rr_a5ultexx-userdebug
