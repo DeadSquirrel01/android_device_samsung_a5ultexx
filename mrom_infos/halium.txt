@@ -37,4 +37,4 @@ initrd_path="%r/initrd.img"
 #  - %i - root image, from root of the root device
 #  - %f - fs of the root image
 base_cmdline="%b"
-dir_cmdline="data_subdir=%s/data"
+dir_cmdline="data_subdir=/data"
