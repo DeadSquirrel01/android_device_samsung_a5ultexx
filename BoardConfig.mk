@@ -27,7 +27,7 @@
 -include vendor/samsung/a5ultexx/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte
+TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a53gxx,a53g,a5ltexx,a5ltedd,a5ultektt,a5ultelgt,a5lteub,a5ultekx,a5ulteskt,a5ultebmc,a5ultedv,a5ltezt
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
