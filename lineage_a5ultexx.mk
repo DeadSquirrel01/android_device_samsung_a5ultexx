@@ -21,6 +21,9 @@ $(call inherit-product, device/samsung/a5ultexx/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Apex
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := lineage_a5ultexx
 PRODUCT_DEVICE := a5ultexx
